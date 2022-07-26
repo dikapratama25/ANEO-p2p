@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <!--Region Permission-->
+    <text name="P2P">P2P</text>
+    <text name="RequiredMessage">{0} is required</text>
+    <text name="ItemLine">Item Line {0}: {1} </text>
+    <text name="RangeInvalidMessage">Range should be from {0} to {1}</text>
+    <text name="PurchaseOrder">Purchase Order</text>
+    <text name="PurchaseRequest">Purchase Request</text>
+    <text name="ConvertPR">Convert PR</text>
+    <text name="ApprovalSetup">Approval Setup</text>
+    <text name="BuyerCatalogue">Buyer Catalogue</text>
+    <text name="BuyerCatalogueView">Buyer Catalogue View</text>
+    <text name="BuyerCatalogueRaise">Buyer Catalogue Raise</text>
+    <text name="Invoice">Invoice</text>
+    <text name="InvoiceListing">Invoice Listing</text>
+    <text name="IssueInvoice">Issue Invoice</text>
+    <text name="IssueInvoiceDetail">Issue Invoice Detail</text>
+    <text name="IssueInvoiceProceed">Issue Invoice Proceed</text>
+    <text name="MyProfile">My Profile</text>
+    <!--End of Permission-->
+
+    <!--Address List-->
+    <text name="STATE">State</text>
+    <text name="COUNTRY">Country</text>
+    <text name="FullAddress">Address</text>
+    <text name="AM_ADDR_CODE">Code</text>
+    <text name="AM_POSTCODE">Post Code</text>
+    <text name="AM_CITY">City</text>
+    <!--End of Address List-->
+
+    <!--Purchase Request Search-->
+    <text name="PRNo">PR No</text>
+    <text name="ItemCode">Item Code</text>
+    <text name="PRStatus">PR Status</text>
+    <text name="PRType">PR Type</text>
+    <text name="ContractPR">Contract PR</text>
+    <text name="NonContractPR">Non-Contract PR</text>
+    <!--End of Purchase Request Search-->
+
+    <!--Purchase Request-->
+    <text name="RequesterEmail">Requester Email</text>
+    <text name="Attention">Attention</text>
+    <text name="InternalRemarks">Internal Remarks</text>
+    <text name="ExternalRemarks">External Remarks</text>
+    <text name="RequesterName">Requester Name</text>
+    <text name="RequesterPhone">Requester Phone</text>
+    <text name="ShippingAddress">Shipping Address</text>
+    <text name="WarrantyTerm">Warranty Term</text>
+    <text name="UseDefaultShippingAddress">Use default shipping address</text>
+    <text name="UseDefaultWarrantyTerm">Use default warranty term</text>
+    <text name="GST/SSTAmount">GST/SST Amount</text>
+    <text name="GrandTotal">Grand Total</text>
+    <text name="SelectedItems">Selected Items</text>
+    <text name="AddInternalRemark">Add internal remark</text>
+    <text name="AddExternalRemark">Add external remark</text>
+    <text name="PleaseProvideAReasonForCancelation">Please Provide a Reason for Cancelation</text>
+    <text name="DuplicateWarningMessage">This PR will be duplicated</text>
+    <text name="SubmitCancelation">Submit Cancelation</text>
+    <text name="CancelPR">Cancel PR</text>
+    <text name="DuplicatePR">Duplicate PR</text>
+    <text name="AreYouSureApprove">Are you sure to approve?</text>
+    <text name="AreYouSureAccept">Are you sure to accept?</text>
+    <text name="AreYouSureReject">Are you sure to reject?</text>
+    <text name="AreYouSureToSubmit">Are you sure to submit?</text>
+    <text name="SubmitConfirmation">Submit Confirmation</text>
+    <text name="AcceptanceConfirmation">Acceptance Confirmation</text>
+    <text name="VoidConfirmation">Void Confirmation</text>
+    <text name="DeleteConfirmation">Delete Confirmation</text>
+    <text name="ApprovalConfirmation">Approval Confirmation</text>
+    <text name="PRItem">PR Item</text>
+    <!--End of Purchase Request-->
+
+    <!--Baselist Field-->
+    <text name="ProductCode">Product Code</text>
+    <text name="VendorItemCode">Vendor Item Code</text>
+    <text name="ProductDesc">Product Desc</text>
+    <text name="TxnPrice">Txn Price</text>
+    <text name="QTY">Quantity</text>
+    <text name="UnitCost">Unit Cost</text>
+    <text name="GSTRate">GST Rate</text>
+    <text name="GSTTaxCode">GST Tax Code</text>
+    <text name="WarrantyTerms">Warranty Terms</text>
+    <text name="VendorID">Vendor ID</text>
+    <text name="GLCode">GL Code</text>
+    <text name="CategoryCode">Category Code</text>
+    <text name="CDGroup">CD Group</text>
+    <text name="AssetGroup">Asset Group</text>
+    <text name="FundType">Fund Type</text>
+    <text name="DeliveryAddr">Delivery Address</text>
+    <text name="PersonCode">Person Code</text>
+    <text name="GLDESCRIPTION">GL Description</text>
+    <text name="PRA_SEQ">Level</text>
+    <text name="Seq">Level</text>
+
+    <text name="AO_NAME">Approving Officer</text>
+    <text name="AAO_NAME">A.Approving Officer</text>
+    <text name="PRA_APPROVAL_TYPE">Approval Type</text>
+    <text name="PRA_ACTION_DATE">Action Date</text>
+    <text name="PRA_AO_REMARK">Remark</text>
+    <text name="PRM_PR_NO">PR No</text>
+    <text name="PRM_SUBMIT_DATE">Submit Date</text>
+    <text name="PRM_PR_TYPE">PR Type</text>
+    <text name="PRM_CREATED_DATE">Created Date</text>
+    <text name="CreatedDate">Created Date</text>
+    <text name="PRM_PR_DATE">Approved Date</text>
+    <text name="STATUS_DESC">Status</text>
+    <text name="PO_NO">PO No</text>
+    <!--End Permission-->
+
+    <!--MapPRMasterDetail-->
+    <text name="FundTypeDesc">Fund Type (L1)</text>
+    <text name="PersonCodeDesc">Person Code (L9)</text>
+    <text name="ProjectCodeDesc">Project / ACR (L8) Code</text>
+    <!--<text name="VendorItemCode">Item Code</text>-->
+    <!--<text name="GLDESCRIPTION">GL Description (GL CODE)</text>-->
+    <text name="QUANTITY">Quantity</text>
+    <text name="Commodity">Commodity Type</text>
+    <text name="UOM">UOM</text>
+    <text name="Currency">Currency</text>
+    <text name="UnitCostLable">Last Txn. Price</text>
+    <text name="AMOUNT">Amount</text>
+    <text name="GSTRateDesc">SST Rate</text>
+    <text name="GST">SST Amount</text>
+    <text name="GstTaxCode">SST Tax Code (Purchase) (L6)</text>
+    <text name="VendorItemCodeDesc">Cost Centre Code (L7)</text>
+    <text name="DeliveryAddrDesc">Delivery Address</text>
+    <text name="Est">Est. Date of Delivery</text>
+    <text name="DeliveryAddress">Delivery Address</text>
+    <text name="Warranty">Warranty Terms (mths)</text>
+    <text name="FieldValueDesc">Segmentation</text>
+    <text name="Remark">Remarks</text>
+    <!--End MapPRMasterDetail-->
+
+    <!--MapANALYSIS_CODE-->
+    <text name="AC_ANALYSIS_CODE">Code</text>
+    <text name="AC_ANALYSIS_CODE_DESC">Description</text>
+    <text name="Acct_Code">Budget Account Code</text>
+    <text name="Acct_List">Budget Account</text>
+    <!--End MapANALYSIS_CODE-->
+
+    <!--PO Listing-->
+    <text name="POM_PO_NO">PO No</text>
+    <text name="POM_CREATED_DATE">Created Date</text>
+    <text name="POM_PO_DATE">PO Date</text>
+    <text name="POM_S_COY_NAME">Vendor Name</text>
+    <text name="POM_ACCEPTED_DATE">PO Accepted Date</text>
+    <text name="Remark1">Fulfilment</text>
+    <text name="PR_NO">PR No</text>
+    <text name="POStatus">PO Status</text>
+    <text name="VenName">Vendor Name</text>
+    <text name="PartiallyDelivered">Partially Delivered</text>
+    <text name="Uninvoice">Uninvoice / Unpaid Completed Delivery</text>
+    <text name="POD_PO_LINE">Line</text>
+    <text name="pod_gift">Gift</text>
+    <text name="FUNDTYPE">Fund Type (L1)</text>
+    <text name="PERSONCODEDESC">Person Code (L9)</text>
+    <text name="PROJECTCODEDESC">Project / ACR (L8) Code</text>
+    <text name="POD_VENDOR_ITEM_CODE">Item Code</text>
+    <text name="gl_codedesc">GL Description (GL Code)</text>
+    <text name="POD_B_CATEGORY_CODE">Category Code</text>
+    <text name="ASSET_CODE">Asset Code</text>
+    <text name="POD_PRODUCT_DESC">Item Name</text>
+    <text name="POD_UOM">UOM</text>
+    <text name="POD_UNIT_COST">Unit Price</text>
+    <text name="GST_RATE">SST Rate</text>
+    <text name="POD_TAX_VALUE">SST Amount</text>
+    <text name="POD_GST_INPUT_TAX_CODE">SST Tax Code (Purchase) (L6)</text>
+    <text name="POD_MIN_PACK_QTY">MPQ</text>
+    <text name="POD_WARRANTY_TERMS">Warranty Terms</text>
+    <text name="POD_ORDERED_QTY">PO Ordered Qty</text>
+    <text name="POD_PR_LINE">Outstd Qty</text>
+    <text name="POD_RECEIVED_QTY">GRN Qty</text>
+    <text name="POD_REJECTED_QTY">Rejected Qty</text>
+    <text name="DOM_DO_NO">DO Number.</text>
+    <text name="CREATIONDATE">DO Creation Date</text>
+    <text name="SUBMITIONDATE">DO Submission Date</text>
+    <text name="DO_CREATED_BY">DO Created By</text>
+    <text name="GM_GRN_NO">GRN No.</text>
+    <text name="GM_CREATED_DATE">GRN Received Date</text>
+    <text name="GM_DATE_RECEIVED">GRN Received Date</text>
+    <text name="GM1_CREATED_BY">GRN Created by</text>
+    <!--end PO Listing-->
+
+    <!--Doc Listing-->
+    <text name="CDA_ATTACH_FILENAME">File Name</text>
+    <!--end Doc Listing-->
+
+    <!--PR TO PO CONVERT-->
+    <text name="UM_USER_NAME">Buyer Name</text>
+    <text name="PRD_VENDOR_ITEM_CODE">Item Code</text>
+    <text name="PRD_PRODUCT_DESC">Item Name</text>
+    <text name="PM_LAST_TXN_S_COY_NAME">Vendor</text>
+    <text name="PRD_ORDERED_QTY">Quantity</text>
+    <text name="PM_LAST_TXN_PRICE_CURR">Currency</text>
+    <text name="PM_LAST_TXN_PRICE">Last Txn. Price</text>
+    <text name="PRD_UNIT_COST">Amount</text>
+    <text name="PRD_GST">Tax</text>
+    <text name="SST_AMOUNT">SST Ammount</text>
+    <text name="PRD_ACCT_INDEX">Budget Account</text>
+    <!--end PR TO PO CONVERT-->
+
+    <!--MISC-->
+    <text name="CompProfil">Company Profile</text>
+    <!--End of MISC-->
+
+    <!--Item Listing-->
+    <text name="PM_PRODUCT_INDEX">Item Index</text>
+    <text name="PM_PRODUCT_CODE">Item Code</text>
+    <text name="BCU_CAT_INDEX">Item Code</text>
+    <text name="PM_VENDOR_ITEM_CODE">Item Code</text>
+    <text name="PM_PRODUCT_DESC">Item Name</text>
+    <text name="CT_NAME">Commodity Type</text>
+    <text name="PM_UOM">UOM</text>
+    <text name="PM_DELETED">Status</text>
+    <!--end Item Listing-->
+    <!--GRN ISSUE Listing-->
+    <text name="POD_Po_Line">Line</text>
+    <text name="POD_B_Item_Code">Item Code</text>
+    <text name="POD_Product_Desc">Item Name</text>
+    <text name="POD_Min_Pack_Qty">MPQ</text>
+    <text name="POD_Ordered_Qty">Order Qty</text>
+    <text name="POD_Outstanding">Outstanding</text>
+    <text name="DOD_SHIPPED_QTY">Receive Qty</text>
+    <text name="GD_REJECTED_QTY">Reject Qty</text>
+    <text name="GM_Date_Received">GRN Date</text>
+    <text name="GM_GRN_No">GRN No</text>
+    <text name="CDDA_FILESIZE">File Size</text>
+    <text name="CDDA_ATTACH_FILENAME">File Name</text>
+    <text name="CDDA_HUB_FILENAME">Hub File Name</text>
+    <text name="DOM_DO_DATE">DO Received Date</text>
+    <text name="Accepted_By">Accepted By</text>
+    
+    <!--END GRN ISSUE Listing-->
+    <!--GRN INVOICE TRACKING-->
+    <text name="IM_INVOICE_TYPE">Document Type</text>
+    <text name="IM_PAYMENT_DATE">Due Date</text>
+    <text name="INVAMT_INMYR">Base Amount (MYR)</text>
+    <text name="CNM_CN_STATUS">Credit Note Status</text>
+    <text name="POM_CURRENCY_CODE">Currency</text>
+    <text name="IM_INVOICE_TOTAL">Amount</text>
+    <text name="POM_BUYER_NAME">Purchaser/Teller</text>
+    <text name="IM_RESIDENT_TYPE">Company Resident</text>
+    <text name="POM_PAYMENT_METHOD">Payment Mode</text>
+    <text name="ID_ANALYSIS_CODE1">Fund Type</text>
+    <text name="ID_PRODUCT_DESC">Item Description</text>
+    <text name="ID_UOM">UOM</text>
+    <text name="ID_PO_LINE">Line</text>
+    <text name="ID_RECEIVED_QTY">QTY</text>
+    <text name="ID_UNIT_COST">Unit Price</text>
+    <text name="ID_GST">Tax</text>
+    <text name="ID_WARRANTY_TERMS">Warranty Terms</text>
+    <text name="PERSONCODE">Person Code (L9)</text>
+    <text name="PROJECTCODE">Project / ACR (L8) Code</text>
+    <!--END INVOICE TRACKING-->
+	  
+	<!-- Invoices -->
+	<!-- Invoice Issue -->
+	  <text name="POM_BILLING_METHOD">Invoice On</text>
+	  <text name="DO_Number">DO Number</text>
+	  <text name="GRN_Number">GRN Number</text>
+	  <text name="Amount">Amount</text>
+	<!-- Invoice Listing -->
+	  <text name="IM_INVOICE_NO">Invoice Number</text>
+    <text name="IM_CREATED_ON">Creation Date</text>
+    <text name="CNM_CN_NO">Credit Note No.</text>
+    <text name="FA_AO_REMARK">Remarks</text>
+    <text name="FA_SEQ">Level</text>
+    <text name="FA_ACTION_DATE">Approved Date</text>
+    <text name="FA_APPROVAL_TYPE">Approval Type</text>
+    <text name="CNM_CREATED_DATE">Credit Note Creation Date</text>
+    <text name="DNM_DN_NO">Debit Note No.</text>
+    <text name="DNM_CREATED_DATE">Debit Note Creation Date</text>
+
+    
+    <!--DO Item list-->
+    <text name="POD_ETD">EDD (Date)</text>
+    <text name="POD_MIN_ORDER_QTY">MOQ</text>
+    <text name="DOD_SHIPPED_QTY_Ship">Ship</text>
+    <text name="DOD_REMARKS">Remarks</text>
+    <text name="POM_PO_Date">PO Date</text>
+    <text name="Item_Code">Item Code</text>
+    <text name="Status_Desc">Status</text>
+
+    <!--advance filter-->
+    <text name="FullyDelivered">Fully Delivered</text>
+    <text name="PartiallyRejected">Partially Rejected</text>
+    <text name="FullyRejected">Fully Rejected</text>
+    
+    <!--DO misc-->
+    <text name="POM_PO_No">PO Number</text>
+    <text name="CM_COY_NAME">Buyer Company</text>
+    <text name="POD_D_ADDR_CODE">Delivery Address Code</text>
+    <text name="Outs">Outstanding Qty</text>
+    <text name="Tot">Ordered Qty</text>
+    <text name="Due_Date">Due Date</text>
+    <text name="DOM_S_Ref_No">Our Ref No.</text>
+    <text name="DOM_DO_Date">DO Submitted On</text>
+    <text name="DOM_Created_Date">Create Date</text>
+    <text name="pm_last_txn_s_coy_id">Last Txn Vendor</text>
+    <text name="PRD_PRODUCT_CODE">Product Code</text>
+    <text name="date_created">Created Date</text>
+    <text name="DOM_Created_By">Created By</text>
+    <text name="DOM_WAYBILL_NO">Air Way Bill No</text>
+    <text name="DOM_FREIGHT_CARRIER">Freight Carrier</text>
+    <text name="DOM_DO_REMARKS">Freight Remark</text>
+    <!--end DO Item list-->
+  </texts>
+</localizationDictionary>

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dto\Master\Approval\**" />
+    <Compile Remove="Dto\Master\BuyerCatalague\**" />
+    <Compile Remove="Dto\Master\DO\**" />
+    <Compile Remove="Dto\Master\Invoice\**" />
+    <Compile Remove="Dto\Master\Item\**" />
+    <Compile Remove="Dto\Master\NewFolder\**" />
+    <EmbeddedResource Remove="Dto\Master\Approval\**" />
+    <EmbeddedResource Remove="Dto\Master\BuyerCatalague\**" />
+    <EmbeddedResource Remove="Dto\Master\DO\**" />
+    <EmbeddedResource Remove="Dto\Master\Invoice\**" />
+    <EmbeddedResource Remove="Dto\Master\Item\**" />
+    <EmbeddedResource Remove="Dto\Master\NewFolder\**" />
+    <None Remove="Dto\Master\Approval\**" />
+    <None Remove="Dto\Master\BuyerCatalague\**" />
+    <None Remove="Dto\Master\DO\**" />
+    <None Remove="Dto\Master\Invoice\**" />
+    <None Remove="Dto\Master\Item\**" />
+    <None Remove="Dto\Master\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\plexform-core\Plexform.DTO\Plexform.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dto\General\" />
+  </ItemGroup>
+
+</Project>

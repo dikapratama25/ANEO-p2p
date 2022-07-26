@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>warnings</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controller\NewFolder\**" />
+    <EmbeddedResource Remove="Controller\NewFolder\**" />
+    <None Remove="Controller\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\Plexform\Plexform.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Plexform\Plexform.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AgoraNEO\AgoraNEO.vbproj" />
+    <ProjectReference Include="..\..\plexform-core\Plexform.Base.Core\Plexform.Base.Core.csproj" />
+    <ProjectReference Include="..\Aneo.DTO.P2P\Aneo.DTO.P2P.csproj" />
+  </ItemGroup>
+
+</Project>

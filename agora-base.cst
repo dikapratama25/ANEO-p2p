@@ -1,0 +1,241 @@
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Template description here." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Property Name="SysTableName" Type="SchemaExplorer.TableSchema" Category="Context" %>
+<%@ Property Name="Namespace" Type="String" Category="Context" Description="????" Default="" Optional="True"%>
+/*----- <%= this.Namespace.ToString().Split('.')[1] %>DTO.cs -----*/
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Plexform.Base;
+using Plexform.Audit;
+
+namespace ANEO.DTO.<%= this.Namespace %> {
+	#region <%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %>
+	[Table("<%= this.SysTableName.ToString().Replace("dbo.", "") %>")]
+	//[Audited]
+    public class <%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %> {
+		<% foreach (MemberColumnSchema primarykey in SysTableName.PrimaryKey.MemberColumns) { %>
+		<% string primaryName = primarykey.Column.ToString().Replace((this.SysTableName.ToString() + "."), ""); %>
+		<% string fieldDataType = GetFieldDataType(primarykey.Column); %>
+		<% string length = SetLength(primarykey.Column.SystemType.ToString(), primarykey.Size); %>
+		[Key]
+		[<%if (fieldDataType != "System.DateTime?") { %><% if (!string.IsNullOrEmpty(length)) {%> <%= length %>, <%}%><%}%>Required]
+		public virtual <%= fieldDataType %> <%= primaryName %> { get; set; }
+		<% } %>
+		<% foreach (ColumnSchema column in SysTableName.NonPrimaryKeyColumns) { %>
+		<% string columnName = column.ToString().Replace((this.SysTableName.ToString() + "."), ""); %>
+		<% if (columnName.ToLower() != "rowguid" && columnName.ToLower() != "flag" && columnName.ToLower() != "tid" && columnName.ToLower() != "active" && columnName.ToLower() != "inuse" && columnName.ToLower() != "ishost" && columnName.ToLower() != "createby" && columnName.ToLower() != "createdate" && columnName.ToLower() != "lastupdate" && columnName.ToLower() != "updateby" && columnName.ToLower() != "synccreate" && columnName.ToLower() != "synclastupd" && columnName.ToLower() != "lastsyncby") { %>
+		<% string fieldDataType = GetFieldDataType(column); %>
+		<% string length = SetLength(column.SystemType.ToString(), column.Size); %>
+		<% bool hasLength= (fieldDataType != "System.DateTime?" && !string.IsNullOrEmpty(length)) ? true : false; %>
+		<%if (fieldDataType == "System.DateTime?") { %>[Column(TypeName="datetime")]<% } else { %><%if (hasLength) {%>[<%= length %><% if (!column.AllowDBNull) {%>, Required]<%} else {%>]<%}} else {%><% if (!column.AllowDBNull) {%>[Required]<%}}}%>
+		public virtual <%= fieldDataType %> <%= columnName %> { get; set; }	
+		<% }} %>
+	}
+	#endregion
+}
+
+/*----- <%= this.Namespace.ToString().Split('.')[1] %>Map.cs -----*/
+using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
+using LOGIC.Base;
+using System.Collections.Generic;
+using Plexform.Base;
+
+namespace ANEO.Base.<%= this.Namespace %>.Map {
+	#region <%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %>
+	[Abp.AutoMapper.AutoMapTo(typeof(ANEO.DTO.<%= this.Namespace %>.<%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %>))]
+	public class Map<%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %> : BaseMapId {
+		<% foreach (MemberColumnSchema primarykey in SysTableName.PrimaryKey.MemberColumns) { %>
+		<% string primaryName = primarykey.Column.ToString().Replace((this.SysTableName.ToString() + "."), ""); %>
+		<% string fieldDataType = GetFieldDataType(primarykey.Column); %>
+		<% string length = SetLength(primarykey.Column.SystemType.ToString(), primarykey.Size); %>
+		[JsonProperty("<%= primaryName.ToLower() %>")] 
+		[<%if (fieldDataType != "System.DateTime?") { %><% if (!string.IsNullOrEmpty(length)) {%> <%= length %>, <%}%><%}%>Required]
+		public virtual <%= fieldDataType %> <%= primaryName %> { get; set; }
+		<% } %>
+		<% foreach (ColumnSchema column in SysTableName.NonPrimaryKeyColumns) { %>
+		<% string columnName = column.ToString().Replace((this.SysTableName.ToString() + "."), ""); %>
+		<% if (columnName.ToLower() != "rowguid" && columnName.ToLower() != "flag" && columnName.ToLower() != "tid" && columnName.ToLower() != "active" && columnName.ToLower() != "inuse" && columnName.ToLower() != "ishost" && columnName.ToLower() != "createby" && columnName.ToLower() != "createdate" && columnName.ToLower() != "lastupdate" && columnName.ToLower() != "updateby" && columnName.ToLower() != "synccreate" && columnName.ToLower() != "synclastupd" && columnName.ToLower() != "lastsyncby") { %>
+		<% string fieldDataType = GetFieldDataType(column); %>
+		<% string length = SetLength(column.SystemType.ToString(), column.Size); %>
+		<% bool hasAttribute = (fieldDataType != "System.DateTime?" && !string.IsNullOrEmpty(length)) ? true : false; %>
+		<% bool hasLength= (fieldDataType != "System.DateTime?" && !string.IsNullOrEmpty(length)) ? true : false; %>
+		[JsonProperty("<%= columnName.ToLower() %>")] <%if (hasLength) {%>[<%= length %>]<%}%>
+		public virtual <%= fieldDataType %> <%= columnName %> { get; set; }
+		<% }} %>
+	}
+	#endregion
+}
+
+/*----- <%= this.Namespace.ToString().Split('.')[1] %>Manager.cs -----*/
+using Abp.Localization;
+using Abp.ObjectMapping;
+using Abp.UI;
+using Abp.Web.Models;
+using LOGIC.Shared.Collection;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Plexform.Authorization.Roles;
+using Plexform.Authorization.Users;
+using Plexform.Base.Core.Controller;
+using Plexform.Base.Core.Helper;
+using Plexform.MultiTenancy;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Xsl;
+using System.Xml.XPath;
+using System.IO;
+using System.Transactions;
+using Plexform.DTO.Core.Location;
+using Plexform.DTO.Core.General;
+using System.Web;
+using Abp.Runtime.Security;
+using System.Linq;
+using Plexform.Base.Core.General.Model;
+using Plexform.Base.Core.General.Repo;
+using Newtonsoft.Json.Linq;
+using Abp.IdentityFramework;
+using Plexform;
+using Plexform.Base;
+using Plexform.Base.Core;
+
+namespace ANEO.Base.<%= this.Namespace %> {
+	public class <%= this.Namespace.ToString().Split('.')[1] %>Manager : BaseClass
+	{
+		public <%= this.Namespace.ToString().Split('.')[1] %>Manager(
+            IWebHostEnvironment env,
+            IAppFolders appFolders,
+            IObjectMapper objectMapper,
+            ILocalizationManager localizationManager,
+            IExcelExporter excelExporter,
+            RoleManager roleManager,
+            UserManager userManager,            
+            TenantManager tenantManager)
+            : base(env, appFolders, objectMapper, roleManager, userManager, tenantManager, excelExporter, localizationManager)
+        {
+        }
+	}
+}
+
+<script runat="template">
+	public string SetFirstLetterToLowerCase(string str) {
+		string val = string.Empty;
+		if (!string.IsNullOrEmpty(str)) {
+			val = char.ToLowerInvariant(str[0]) + str.Substring(1);
+		}
+		return val;
+	}
+	
+	public string SetFirstLetterToUpperCase(string str) {
+		string val = string.Empty;
+		if (!string.IsNullOrEmpty(str)) {
+			val = char.ToUpperInvariant(str[0]) + str.Substring(1);
+		}
+		return val;
+	}
+	
+	public string GetFieldDataType(ColumnSchema column)
+	{
+		if (column.Name.EndsWith("TypeCode")) return column.Name;
+		
+		switch (column.DataType)
+		{
+			case DbType.AnsiString: return "string";
+			case DbType.AnsiStringFixedLength: return "string";
+			case DbType.Binary: return "byte[]";
+			case DbType.Boolean: return "bool?";
+			case DbType.Byte: return "byte?";
+			case DbType.Currency: return "decimal?";
+			case DbType.Date: return "System.DateTime?";
+			case DbType.DateTime: return "System.DateTime?";
+			case DbType.Decimal: return "decimal?";
+			case DbType.Double: return "double?";
+			case DbType.Guid: return "Guid?";
+			case DbType.Int16: return "short?";
+			case DbType.Int32: return "int?";
+			case DbType.Int64: return "long?";
+			case DbType.Object: return "object";
+			case DbType.SByte: return "sbyte?";
+			case DbType.Single: return "float?";
+			case DbType.String: return "string";
+			case DbType.StringFixedLength: return "string";
+			case DbType.Time: return "TimeSpan?";
+			case DbType.UInt16: return "ushort?";
+			case DbType.UInt32: return "uint?";
+			case DbType.UInt64: return "ulong?";
+			case DbType.VarNumeric: return "decimal?";
+			default:
+			{
+				return "__UNKNOWN__" + column.NativeType;
+			}
+		}
+	}    
+	
+	public string SetLength(string DataTypeName, int size) {
+		if (size > 0) {
+			string datatypename = DataTypeName.Replace("[", "").Replace("]", "");
+        	switch (datatypename) {
+				case "System.Byte":
+					return "";
+				case "System.Int16":
+					return "Range(0," + new String('9', size) +")";
+				case "System.Int32":
+					return "Range(0," + new String('9', size) +")";
+				case "System.Int64":
+					return "Range(0," + new String('9', size) +")";
+				case "System.String":
+					return "MaxLength(" + size +")";
+				default:
+					return "";
+        	}
+		}
+		else {
+			return "";
+		}
+    }
+	
+	public string GetDefaultValue(string value) {
+		if (value.Contains("[dbo].[D_ACTIVE]")) {
+			return "(1)";
+		}
+		else if (value.Contains("[dbo].[D_AMTVALUE0]")) {
+			return "(0)";
+		}		
+		else if (value.Contains("[dbo].[D_EMPTY]")) {
+			return "''";	
+        }
+		else if (value.Contains("[dbo].[D_FLAG]")) {
+			return "(1)";
+		}
+		else if (value.Contains("[dbo].[D_INUSE]")) {
+			return "(0)";
+		}
+		else if (value.Contains("[dbo].[D_NULL]")) {
+			return "NULL";
+		}
+		else if (value.Contains("[dbo].[D_NUM0]")) {
+			return "(0)";
+		}
+		else if (value.Contains("[dbo].[D_NUM1]")) {
+			return "(1)";	
+        }
+		else if (value.Contains("[dbo].[D_STATUS]")) {
+			return "(0)";
+		}
+		else if (value.Contains("[dbo].[D_USRTIME]")) {
+			return "(0)";	
+		}
+		else if (value.StartsWith("(") && value.EndsWith(")")) {
+			return value.Remove(value.Length - 1).Substring(1);
+		}
+        else {
+            return value;
+		}		
+    }
+</script>
