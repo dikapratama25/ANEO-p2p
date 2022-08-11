@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Plexform.Base;
 using Plexform.Audit;
 
-namespace ANEO.DTO.<%= this.Namespace %> {
+namespace LIMS.DTO.<%= this.Namespace %> {
 	#region <%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %>
 	[Table("<%= this.SysTableName.ToString().Replace("dbo.", "") %>")]
 	//[Audited]
@@ -43,7 +43,7 @@ using LOGIC.Base;
 using System.Collections.Generic;
 using Plexform.Base;
 
-namespace ANEO.Base.<%= this.Namespace %>.Map {
+namespace LIMSNeo.Base.<%= this.Namespace %>.Map {
 	#region <%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %>
 	[Abp.AutoMapper.AutoMapTo(typeof(ANEO.DTO.<%= this.Namespace %>.<%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %>))]
 	public class Map<%= this.SysTableName.ToString().ToUpper().Replace("dbo.", "") %> : BaseMapId {
